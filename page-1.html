@@ -11,7 +11,7 @@
         <h1>Aves Chilenas</h1>
         <ul>
             <li><a href="index.html">Portada</a></li>
-            <li><a href="page-1.html" class="active">page-1</a></li>
+            <li><a href="page-1.html" class="active">PASSERIFORMES</a></li>
             <li><a href="page-2.html">page-2</a></li>
             <li><a href="page-3.html">page-3</a></li>
             <li><a href="page-4.html">page-4</a></li>
@@ -20,8 +20,9 @@
         </ul>
     </nav>
     <div class="container">
-        <h2>PASSERIFORMES (Pájaros Cantores)</h2>
-        <p>Los paseriformes (Passeriformes) son un diverso orden de aves que abarca más de la mitad de las especies de aves del mundo. Los paseriformes se conocen comúnmente como pájaros y a veces aves cantoras o pájaros cantores. Los pájaros son el grupo de vertebrados terrestres más diversificado, con más de cinco mil setecientas especies identificadas,[1]​ lo que aproximadamente duplica el número de especies del orden de mamíferos más abundante, los roedores (Rodentia).</p>
+        <h2>PASSERIFORMES</h2>
+        <p>El orden más grande de las aves en general, a menudo llamadas "pájaros cantores" o "pájaros percheros" debido a sus patas adaptadas para agarrarse a las ramas. Este grupo incluye una vasta diversidad de familias como los tapaculos (Rhinocryptidae), el Chincol, el Zorzal, los Cometocinos, los Diucones y muchas otras especies pequeñas y medianas esenciales en los ecosistemas terrestres chilenos.
+</p>
         <div class="grid" id="grid"></div>
     </div>
     <footer>
@@ -37,7 +38,7 @@
                 console.log(data);
                 let conteo = 1;
                 data.forEach((a) => {
-                    if(a.info.order.value == "Passeriformes"){
+                    if(a.info.order.value.includes ("Passeriformes")){
                     //if(){                    
                     grid.innerHTML += `
                         <div class="grid-item">
@@ -45,12 +46,12 @@
                             <p>${conteo}. <em>${a.names.spanish}</em></p>
                             <small>${a.names.latin}</small>
                         </div>
-                        
                     `;
                     conteo++;
                     //};
                     }
                 });
+                
             } catch (error) {
                 console.error('Error al cargar los datos:', error);
             }
@@ -59,4 +60,3 @@
         datos("https://raw.githubusercontent.com/NinjasCL/chileanbirds-dataset/refs/heads/master/data/birds.json");
     </script>
 </body>
-</html>
