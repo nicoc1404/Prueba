@@ -37,6 +37,7 @@
                 console.log(data);
                 let conteo = 1;
                 data.forEach((a) => {
+                    if(info.order.value == "Passeriformes"){
                     //if(){                    
                     grid.innerHTML += `
                         <div class="grid-item">
@@ -44,9 +45,11 @@
                             <p>${conteo}. <em>${a.names.spanish}</em></p>
                             <small>${a.names.latin}</small>
                         </div>
+                        
                     `;
                     conteo++;
                     //};
+                    }
                 });
             } catch (error) {
                 console.error('Error al cargar los datos:', error);
