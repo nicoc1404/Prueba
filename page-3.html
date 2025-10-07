@@ -11,21 +11,21 @@
         <h1>Aves Chilenas</h1>
         <ul>
             <li><a href="index.html">Portada</a></li>
-            <li><a href="page-1.html">page-1</a></li>
-            <li><a href="page-2.html">page-2</a></li>
-            <li><a href="page-3.html" class="active">page-3</a></li>
-            <li><a href="page-4.html">page-4</a></li>
-            <li><a href="page-5.html">page-5</a></li>
-            <li><a href="page-6.html">page-6</a></li>
+            <li><a href="page-1.html">Pájaros Cantores</a></li>
+            <li><a href="page-2.html">Aves playeras y marinas</a></li>
+            <li><a href="page-3.html" class="active">Aves acuáticas</a></li>
+            <li><a href="page-4.html">Aves rapaces</a></li>
+            <li><a href="page-5.html">Aves acuáticas y costeras</a></li>
+            <li><a href="page-6.html">Aves marinas no voladoras</a></li>
         </ul>
     </nav>
     <div class="container">
-        <h2>page-3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et dignissim ligula, id vestibulum mauris. Curabitur libero orci, ultrices eu risus vehicula, consequat pretium sem. Fusce dolor arcu, cursus a justo sit amet, dapibus aliquam tellus. Morbi a orci at lectus eleifend varius fermentum quis neque.</p>
+        <h2>ANSERIFORMES</h2>
+        <p>Aves acuáticas altamente especializadas, conocidas por sus picos anchos y aplanados (lameliformes) y sus patas palmeadas, adaptadas para nadar y filtrar el alimento del agua. En Chile están representadas principalmente por la familia Anatidae (patos, cisnes y gansos, como el pato real, el cisne de cuello negro y los caiquenes).</p>
         <div class="grid" id="grid"></div>
     </div>
     <footer>
-        <p>Desarrollado por <a href="#" target="_blank">Nombre Apellido</a> &copy; 2025</p>
+        <p>Desarrollado por <a href="#" target="_blank">Nicole Cerpa</a> &copy; 2025</p>
     </footer>
     <script>
         const grid = document.getElementById('grid');
@@ -37,6 +37,7 @@
                 console.log(data);
                 let conteo = 1;
                 data.forEach((a) => {
+                   if(a.info.order.value.includes ("Anseriformes")){
                     //if(){                    
                     grid.innerHTML += `
                         <div class="grid-item">
@@ -47,6 +48,7 @@
                     `;
                     conteo++;
                     //};
+                   }
                 });
             } catch (error) {
                 console.error('Error al cargar los datos:', error);
@@ -56,4 +58,3 @@
         datos("https://raw.githubusercontent.com/NinjasCL/chileanbirds-dataset/refs/heads/master/data/birds.json");
     </script>
 </body>
-</html>
